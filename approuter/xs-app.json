@@ -1,0 +1,22 @@
+{
+  "welcomeFile": "/index.html",
+  "authenticationMethod": "route",
+  "logout": {
+    "logoutEndpoint": "/logout",
+    "logoutPage": "/index.html"
+  },
+  "routes": [
+    {
+      "source": "^/index.html$",
+      "localDir": ".",
+      "authenticationType": "xsuaa"
+    },
+    {
+      "source": "^/api/(.*)$",
+      "target": "/$1",
+      "destination": "py-backend",
+      "authenticationType": "xsuaa",
+      "csrfProtection": false
+    }
+  ]
+}

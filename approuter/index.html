@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python XSUAA Hello World</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        h1 { color: #0a6ed1; }
+        a { color: #0a6ed1; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .endpoint { background: #f4f4f4; padding: 10px; margin: 10px 0; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SAP BTP Python Hello World</h1>
+        <p>You are authenticated! Click the links below to access the API:</p>
+        
+        <div class="endpoint">
+            <strong>Hello Endpoint:</strong><br>
+            <a href="/api/hello">/api/hello</a> - Returns authenticated user info
+        </div>
+        
+        <div class="endpoint">
+            <strong>Health Check:</strong><br>
+            <a href="/api/health">/api/health</a> - Backend health status
+        </div>
+        
+        <div class="endpoint">
+            <strong>Logout:</strong><br>
+            <a href="/logout">/logout</a> - End your session
+        </div>
+    </div>
+</body>
+</html>

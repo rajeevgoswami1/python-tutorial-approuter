@@ -1,0 +1,14 @@
+# Flask web framework
+Flask>=2.0.0
+
+# SAP XSUAA Security Library for token validation
+sap-xssec>=4.0.0
+
+# Cloud Foundry environment helper
+cfenv>=0.5.3
+
+# WSGI HTTP Server for production
+gunicorn>=21.0.0
+
+# HTTP client for token requests (dependency)
+requests>=2.28.0

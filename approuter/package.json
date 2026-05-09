@@ -1,0 +1,11 @@
+{
+  "name": "py-xsuaa-approuter",
+  "version": "1.0.0",
+  "description": "AppRouter for Python XSUAA Hello World",
+  "scripts": {
+    "start": "node node_modules/@sap/approuter/approuter.js"
+  },
+  "dependencies": {
+    "@sap/approuter": "^14.0.0"
+  }
+}

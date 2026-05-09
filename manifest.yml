@@ -1,0 +1,30 @@
+---
+applications:
+  # AppRouter (entry point for browser users)
+  - name: py-xsuaa-approuter
+    memory: 128M
+    disk_quota: 256M
+    instances: 1
+    buildpacks:
+      - nodejs_buildpack
+    path: approuter
+    services:
+      - py-xsuaa-service
+    env:
+      destinations: '[{"name":"py-backend","url":"https://py-xsuaa-backend.cfapps.us10-001.hana.ondemand.com","forwardAuthToken":true}]'
+      CORS: '[{"uriPattern": "^/(.*)$", "allowedOrigin": [{"host": "*.hana.ondemand.com", "protocol": "https"}]}]'
+      httpHeaders: '[{"X-Frame-Options":"SAMEORIGIN"},{"Content-Security-Policy":"default-src ''self''"}]'
+
+  # Python Backend
+  - name: py-xsuaa-backend
+    memory: 256M
+    disk_quota: 512M
+    instances: 1
+    buildpacks:
+      - python_buildpack
+    path: .
+    command: gunicorn --bind 0.0.0.0:$PORT app.main:app
+    services:
+      - py-xsuaa-service
+    env:
+      PYTHONUNBUFFERED: 1
